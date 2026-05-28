@@ -9,21 +9,49 @@
 <body>
     <div class="main-flex">
         <div class="main-card-flex">
-            <img src="" alt="">
-            <h1>Character Counter</h1>
-            <div class="analyze-tittle">
-                <h1><span>Analyze your text in real-time.</span></h1>
+            <div class="header-card">
+                <img src="" alt="">
+                 <h1>Character Counter</h1>
             </div>
-            
-            <textarea class="textarea" placeholder="Escribi..."></textarea>
-            
+            <div class="tittle-card">
+                <h1><span>Analyze your text in real-time.</span></h1>
+            </div>        
+            <textarea name="textarea" class="textarea" rows="5" >Design is the silent ambassor of your brand. Simplicity is key to effective communication, creating clarity in every interaction. A great design transforms complex ideas into elegant solutions, making them easy to understand. It blends aesthetics and functionality seamlessly.</textarea>
+            <div class="checkbox">
+                <div class="checkbox-pointer">
+                    <input type="checkbox" name="exclude spaces" id="exclude spaces">
+                    <label for="exclude spaces" style="cursor: pointer;">Exclude spaces</label>
+                    <input type="checkbox" name="set character limit" id="set character limit">
+                    <label for="set character limit" style="cursor: pointer;">Set character limit</label>
+                </div>   
+                <p>Approx. reading time:<1minute </p>
+            </div>
             <div class="counter-flexbox">
-                <div class="character-counter">
+                <div class="characters-card"flex-grow="1">
+                    <div class="card-num">
+                        <p>278</p>
+                    </div>
+                    <div class="card-text">
+                        <p>Total Characters</p>
+                    </div>
                 </div>
-                <div class="word-counter">
+                 <div class="word-card"flex-grow="1">
+                    <div class="card-num">
+                        <p>39</p>
+                    </div>
+                    <div class="card-text">
+                        <p>Word Count</p>
+                    </div>
                 </div>
-                <div class="sentence-counter">
+                 <div class="sentence-card"flex-grow="1" >
+                    <div class="card-num">
+                        <p>04</p>
+                    </div>
+                    <div class="card-text">
+                        <p>Sentence Count</p>
+                    </div>
                 </div>
+                
             </div>
             <div class="letter-density">
                 <ul>

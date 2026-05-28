@@ -29,33 +29,139 @@ margin: 0;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  color:var(--texto-principal)
 }
-.main-card-flex{
-  background-color: #12131A;
-  justify-content: center;
-  align-items: center;
-  height: 60vh;
-  width:60vw;
-  max-width: 300px;
+.main-card-flex {
+  background-color: var(--fondo-principal); /* #12131A */
+  display: flex;
+  flex-direction: column;
+  
+  width: 100%;
+  max-width: 650px;       /* Un ancho ideal para que se vea idéntico a la foto */
+  padding: 40px;          /* Espacio alrededor de toda la tarjeta */
+  border-radius: 24px;    /* Bordes redondeados para la tarjeta principal */
+  
+  /* Nota: NO le pongas 'height' ni 'justify-content: center' aquí, 
+     deja que los elementos empujen de arriba hacia abajo naturalmente */
 }
-.main-card-flex h1{
+.header-card{
+  display:flex;
+  width: 100%;
+  height: 10%;
+}
+.header-card h1{
   padding: 0;
   margin: 0;
   font-size: small;
+  flex-grow: 3;
+  max-width: 80%;
 }
-.textarea{
-   
-    /* 1. Elimina los estilos por defecto del navegador */
-    all: unset; 
-    box-sizing: border-box;
-    /* 2. Permite cambiar el tamaño en cualquier dirección (horizontal y vertical) */
-    resize: none; 
-    /* 3. Le das un tamaño inicial por defecto para que no aparezca invisible */
-    width: 300px;
-    height: 150px;
-    /* 4. Opcional: Asegura que se note dónde se puede escribir (comportamiento básico) */
-    display: inline-block;
-    font-family: inherit;
-    padding: 5px;
+.header-card img{
+  padding: 0;
+  margin: 0;
+  font-size: small;
+  flex-grow: 1;
+}
+.tittle-card{
+  display:flex;
+  flex-grow: 2;
+  justify-content: center;
+  text-align: center;
+}
+.textarea {
+    /* 1. Reset completo pero seguro (sin all:unset) */
+    border: none;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
     
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    
+    /* 2. El truco anti-scroll: dejamos que el alto sea automático según el texto */
+    resize: none; 
+    overflow: hidden; /* Al no tener un 'height' fijo, esto no cortará el texto, solo quitará la barra */
+    
+    /* 3. Colores idénticos a la imagen */
+    background-color: var(--fondo-de-cards-textarea); /* #1C1F2A */
+    color: var(--texto-principal); /* El texto debe ser claro (#F2F2F7), no negro */
+    
+    /* 4. Tipografía y espaciado (Copiando el diseño) */
+    font-family: var(--fuente-principal);
+    font-size: 16px;          /* 8px era diminuto, en la foto se ve de un tamaño normal de lectura */
+    line-height: 1.6;         /* Le da espacio entre líneas para que sea agradable leer */
+    letter-spacing: 0.5px;
+    
+    /* 5. Bordes y Paddings generosos como en la foto */
+    padding: 0 24px;            /* Bastante espacio interno */
+    border-radius: 16px;      /* Bordes bien redondeados */
+    margin: 20px 0 0 0;           /* Separación con el título y los contadores */
+    border:1px solid var(--bordes-sutiles);
+}
+.checkbox {
+  font-size: 9px;
+  display:flex;
+  justify-content: space-between;
+  
+}
+.checkbox-pointer{
+  font-size: inherit;
+  display:flex;
+}
+input{
+  padding: 0;
+  margin:5px; 
+  
+}
+label{
+ 
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  
+}
+p{
+  align-items: right;
+}
+.counter-flexbox{
+  display:flex;
+  width: 100%;
+  justify-content:space-between;
+  
+}
+.counter-flexbox div{
+  border-radius: 10px;
+  margin:10px;
+  flex-grow: 1;
+}
+.characters-card{
+  background-color: var(--card-violeta);
+  width: 100%;
+  
+}
+.word-card{
+  background-color: var(--card-naranja);
+  width: 100%;
+  
+}
+.sentence-card{
+  background-color: var(--card-coral);
+  width: 100%;
+
+
+}
+.card-num {
+  color:var(--fondo-principal);
+  font-size: 50px;
+  margin:0;
+}
+.card-num p{
+  font-weight: 550;
+}
+.card-text{
+  color:var(--fondo-principal);
 }
