@@ -16,9 +16,46 @@ font-style: normal;
   --barras-de-progreso: #D19BFF;
   --bordes-sutiles: #2A2D3A;
   --fuente-principal: 'spaceGrotestk', sans-serif;
-}
-body {
     font-family: var(--fuente-principal);
+}
+body
+{
+padding: 0;
+margin: 0;
 
 }
-
+.main-flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.main-card-flex{
+  background-color: #12131A;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  width:60vw;
+  max-width: 300px;
+}
+.main-card-flex h1{
+  padding: 0;
+  margin: 0;
+  font-size: small;
+}
+.textarea{
+   
+    /* 1. Elimina los estilos por defecto del navegador */
+    all: unset; 
+    box-sizing: border-box;
+    /* 2. Permite cambiar el tamaño en cualquier dirección (horizontal y vertical) */
+    resize: none; 
+    /* 3. Le das un tamaño inicial por defecto para que no aparezca invisible */
+    width: 300px;
+    height: 150px;
+    /* 4. Opcional: Asegura que se note dónde se puede escribir (comportamiento básico) */
+    display: inline-block;
+    font-family: inherit;
+    padding: 5px;
+    
+}
