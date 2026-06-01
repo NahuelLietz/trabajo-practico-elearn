@@ -26,19 +26,22 @@ margin: 0;
 }
 .main-flex{
   display: flex;
+  padding: 0;
+  margin: 0;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   color:var(--texto-principal)
 }
 .main-card-flex {
+  padding: 20px;
+  margin: 0;
   background-color: var(--fondo-principal); /* #12131A */
   display: flex;
   flex-direction: column;
   
   width: 100%;
   max-width: 650px;       /* Un ancho ideal para que se vea idéntico a la foto */
-  padding: 40px;          /* Espacio alrededor de toda la tarjeta */
   border-radius: 24px;    /* Bordes redondeados para la tarjeta principal */
   
   /* Nota: NO le pongas 'height' ni 'justify-content: center' aquí, 
@@ -48,25 +51,28 @@ margin: 0;
   display:flex;
   width: 100%;
   height: 10%;
+  align-items: center;
 }
-.header-card h1{
+.header-card h2{
   padding: 0;
   margin: 0;
-  font-size: small;
   flex-grow: 3;
   max-width: 80%;
+  font-weight: lighter;
+  font-size:large;
 }
 .header-card img{
   padding: 0;
   margin: 0;
-  font-size: small;
-  flex-grow: 1;
+  height: 30px;
+  width: 30px;
+  
 }
 .tittle-card{
   display:flex;
   flex-grow: 2;
   justify-content: center;
-  text-align: center;
+  align-items: center;
 }
 .textarea {
     /* 1. Reset completo pero seguro (sin all:unset) */
@@ -80,9 +86,9 @@ margin: 0;
     box-sizing: border-box;
     width: 100%;
     
-    /* 2. El truco anti-scroll: dejamos que el alto sea automático según el texto */
+    
     resize: none; 
-    overflow: hidden; /* Al no tener un 'height' fijo, esto no cortará el texto, solo quitará la barra */
+    overflow: hidden;
     
     /* 3. Colores idénticos a la imagen */
     background-color: var(--fondo-de-cards-textarea); /* #1C1F2A */
@@ -155,33 +161,33 @@ p{
   margin:10px;
   flex-grow: 1;
 }
+.card{
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden; 
+  display: inline;
+  align-items: flex-end;
+  box-sizing: border-box;
+  z-index: 100;
+}
 .characters-card{
   background-color: var(--card-violeta);
   width: 100%;
-  
+  z-index: 100;
+
 }
 .word-card{
   background-color: var(--card-naranja);
   width: 100%;
-  
+  z-index: 100;
 }
 .sentence-card{
   background-color: var(--card-coral);
   width: 100%;
 
+z-index: 100;
+}
 
-}
-.card-num {
-  color:var(--fondo-principal);
-  font-size: 50px;
-  margin:0;
-}
-.card-num p{
-  font-weight: 550;
-}
-.card-text{
-  color:var(--fondo-principal);
-}
 .letter-density{
   display:flex;
   flex-direction: column;
@@ -189,20 +195,25 @@ p{
  
 }
 .flex-progress-bar{
-  display:flex;
-  flex-direction: row;
+  display:flex;  
   height: 30px;
   text-align: center;
-  justify-content: space-evenly;
   align-items: center;
-  
+}
+.flex-progress-bar p:first-of-type {
+  width:50px;
+  text-align: left;
   
 }
-.flex-progress-bar p{
-  width:20px;
+.flex-progress-bar p:last-of-type {
+  
+  max-width: 100px;
+  width: 81px;
+  padding-left: 20px;
 }
 .progress-bar{
   display: flex;
+  justify-content: first baseline;
   border-radius: 50px;
   width: 100%;
   background-color: var(--bordes-sutiles);
@@ -210,8 +221,7 @@ p{
   margin:0;
   padding: 0;
   overflow: hidden;
-  z-index: 100;
-  
+  z-index: 100; 
 }
 .fillA{
   display: flex;
@@ -264,7 +274,80 @@ p{
   overflow: hidden;  
 }
 .titulo-letter-density{
+  display:flex;
+  align-items: center;
+  font-size: smaller;
   margin:0;
   padding:0;
-  height: 10%;
+  height: 40px;
+  text-align: center;
+}
+.characters-card::after
+ {
+ content: "";
+  position: absolute;
+  top: 0;
+  right: -40px;
+  width: 120px; 
+  height: 100%;
+  pointer-events: none; 
+  opacity: 0.20; 
+
+  
+  background-image: radial-gradient(circle at center, transparent 29px, #fff 30px);
+
+  
+  background-size: 60px 60px;
+  background-position: -25px 0;
+  background-repeat: repeat;
+  z-index: 100;
+}
+.sentence-card::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -40px;
+  width: 120px; 
+  height: 100%;
+  pointer-events: none; 
+  opacity: 0.20; 
+  z-index: 100;
+  
+  background-image: radial-gradient(circle at center, transparent 44px, #fff 45px);
+
+  
+  background-size: 90px 90px;
+  background-position: -25px 0;
+  background-repeat: repeat;
+
+}
+
+
+.word-card::after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 100px;
+  height: 200px;
+  opacity: 0.25;
+	background-image: repeating-conic-gradient( var(--card-naranja) 0% 25%,var(--texto-principal) 0% 50%);
+	background-position: 0 0,130px 130px ;
+	background-size: 130px 130px  ;
+	z-index: 100;
+
+  
+  
+}
+.card-num {
+  color:var(--fondo-principal);
+  font-size: 50px;
+  margin:0;
+  z-index: 10000;
+}
+.card-num p{
+  font-weight: 550;
+}
+.card-text{
+  color:var(--fondo-principal);
 }
