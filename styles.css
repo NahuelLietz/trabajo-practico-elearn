@@ -110,10 +110,27 @@ margin: 0;
   font-size: inherit;
   display:flex;
 }
-input{
+
+.checkbox-pointer input[type="checkbox"] {
   padding: 0;
-  margin:5px; 
-  
+  margin: 5px;
+  appearance: none;
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  border: 1.5px solid var(--texto-secundario);
+  border-radius: 3px;
+  background-color: var(--fondo-de-cards-textarea);
+  cursor: pointer;
+}
+
+.checkbox-pointer input[type="checkbox"]:checked {
+  background-color: var(--fondo-de-cards-textarea);
+  border-color: var(--barras-de-progreso);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 10 10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.5 5l2.5 2.5 4.5-4.5' stroke='%23D19BFF' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 label{
  
@@ -164,4 +181,90 @@ p{
 }
 .card-text{
   color:var(--fondo-principal);
+}
+.letter-density{
+  display:flex;
+  flex-direction: column;
+  box-sizing: border-box;
+ 
+}
+.flex-progress-bar{
+  display:flex;
+  flex-direction: row;
+  height: 30px;
+  text-align: center;
+  justify-content: space-evenly;
+  align-items: center;
+  
+  
+}
+.flex-progress-bar p{
+  width:20px;
+}
+.progress-bar{
+  display: flex;
+  border-radius: 50px;
+  width: 100%;
+  background-color: var(--bordes-sutiles);
+  height: 9px;
+  margin:0;
+  padding: 0;
+  overflow: hidden;
+  z-index: 100;
+  
+}
+.fillA{
+  display: flex;
+  border-radius: 50px;
+  width: 16%;
+  background-color: var(--barras-de-progreso);
+  height: 9px;
+  margin:0;
+  padding: 0;
+  overflow: hidden;  
+}
+.fillE{
+  display: flex;
+  border-radius: 50px;
+  width: 11%;
+  background-color: var(--barras-de-progreso);
+  height: 9px;
+  margin:0;
+  padding: 0;
+  overflow: hidden;  
+}
+.fillI{
+  display: flex;
+  border-radius: 50px;
+  width: 11%;
+  background-color: var(--barras-de-progreso);
+  height: 9px;
+  margin:0;
+  padding: 0;
+  overflow: hidden;  
+}
+.fillO{
+  display: flex;
+  border-radius: 50px;
+  width: 8%;
+  background-color: var(--barras-de-progreso);
+  height: 9px;
+  margin:0;
+  padding: 0;
+  overflow: hidden;  
+}
+.fillU{
+  display: flex;
+  border-radius: 50px;
+  width: 8%;
+  background-color: var(--barras-de-progreso);
+  height: 9px;
+  margin:0;
+  padding: 0;
+  overflow: hidden;  
+}
+.titulo-letter-density{
+  margin:0;
+  padding:0;
+  height: 10%;
 }
